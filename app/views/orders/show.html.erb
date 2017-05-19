@@ -63,6 +63,12 @@
 
     </table>
 
+   <div class="pull-left">
+     <% if @order.order_placed? || @order.paid? %>
+       <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn  btn-info") %>
+     <% end %>
+   </div>
+
     <% if !@order.is_paid? %>
     <div class="group pull-right">
        <%= link_to("以支付寶支付", pay_with_alipy_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
@@ -71,7 +77,7 @@
     <% else %>
       <p class="text-center">此訂單已完成付款</p>
     <% end %>
-    
+
   </div>
 
 </div>
