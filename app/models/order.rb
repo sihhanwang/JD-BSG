@@ -40,6 +40,10 @@ class Order < ApplicationRecord
     end
 
     event :deliver do
+      transitions from: :shipping,     to: :shipped
+    end
+
+    event :return_good do
       transitions from: :shipped,      to: :good_returned
     end
 
