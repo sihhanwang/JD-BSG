@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
+    resources :orders
   end
 
   namespace :account do
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
       post :pay_with_wechat
     end
   end
-  
+
   resources :cart_items
 
   root 'products#index'
