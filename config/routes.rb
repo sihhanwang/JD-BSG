@@ -22,7 +22,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders
+  resources :orders do
+    member do
+      post :pay_with_alipy
+      post :pay_with_wechat
+    end
+  end
+  
   resources :cart_items
 
   root 'products#index'
