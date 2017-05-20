@@ -12,9 +12,13 @@
 
     <div class="container-fluid">
       <%= render "common/navbar" %>
-      <%= render "common/flashes" %>
       <%= yield %>
     </div>
     <%= render "common/footer" %>
   </body>
+  <%= js add_gritter(flash[:notice],image: :notice , title: "BGR：", sticky: false), extend_gritter(position: :bottom_right) %>
+  <%= js add_gritter(flash[:warning],image: :notice , title: "BGR：", sticky: false), extend_gritter(position: :bottom_right) %>
+  <%= js add_gritter(flash[:success],image: :notice , title: "BGR：", sticky: false), extend_gritter(position: :bottom_right) %>
+
 </html>
+<script>new WOW().init();</script>
