@@ -10,6 +10,11 @@
       <% end %>
       <%= product.title %> $ <%= product.price %>
       类别：<%= Category.find(product.category_id).name %>
+      <% if !product.users.include?(current_user) %>
+        <%= link_to("收藏",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
+      <% else %>
+        <%= link_to("收藏", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+      <% end %>
     </div>
   <% end %>
 </div>
