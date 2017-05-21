@@ -9,6 +9,7 @@
         <% end %>
       <% end %>
       <%= product.title %> $ <%= product.price %>
+      类别：<%= Category.find(product.category_id).name %>
     </div>
   <% end %>
 </div>

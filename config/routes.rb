@@ -38,6 +38,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :categories do
+	   resources :products
+   end
+
   resources :cart_items
 
   root 'products#index'
