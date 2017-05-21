@@ -3,7 +3,7 @@
 </h3>
   <% Product.where(category_id: @category.id).each do |product| %>
 	<li>
-  	  <%= job.title %>
+  	  <%= product.title %>
 	</li>
 	<% end %>
 	<p id="notice"><%= notice %></p>
