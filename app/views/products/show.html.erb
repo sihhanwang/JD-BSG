@@ -25,7 +25,7 @@
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("我要鍛鍊", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
       <% else %>
-        已銷售一空，無法購買
+        名额已满
       <% end %>
     </div>
   </div>
