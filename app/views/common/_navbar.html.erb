@@ -33,9 +33,13 @@
                  <li>
                   <%= link_to("後台列表管理", admin_products_path ) %>
                  </li>
+                 <li>
+                   <%= link_to("新增分类", categories_path ) %>
+                 </li>
                <% end %>
                <li class="divider"> </li>
                  <li> <%= link_to("我的訂單", account_orders_path )%> </li>
+                 <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%> </li>            
                <li class="divider"> </li>
                  <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
              </ul>

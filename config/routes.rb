@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :add_to_favorite
+      post :quit_favorite
     end
   end
 
@@ -37,6 +39,10 @@ Rails.application.routes.draw do
       post :apply_to_cancel
     end
   end
+
+  resources :categories do
+	   resources :products
+   end
 
   resources :cart_items
 
