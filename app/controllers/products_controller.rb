@@ -5,6 +5,27 @@ class ProductsController < ApplicationController
       @products = current_user.products
     end
 
+    if params[:category_id].blank?
+    @products = Product.all
+    else
+    @products = Product.where(category_id: params[:category_id])
+    end
+
+  end
+  def new
+     @categories = Category.all.map { |c| [c.name, c.id] }
+  end
+
+  def create
+     @product.category_id = params[:category_id]
+  end
+  
+  def edit
+     @categories = Category.all.map { |c| [c.name, c.id] }
+  end
+
+  def update
+     @product.category_id = params[:category_id]
   end
 
   def show
