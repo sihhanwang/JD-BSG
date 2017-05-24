@@ -1,0 +1,11 @@
+<div class="col-md-10 col-md-offset-1">
+  <hr />
+  <%= simple_form_for [:admin,@category] do |f| %>
+    <div>
+      <%= f.input :name, :label => false, placeholder: '请输入类型' %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "送出", disable_with: "Submiting...", class: "button"%>
+    </div>
+  <% end %>
+</div>

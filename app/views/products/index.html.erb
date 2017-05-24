@@ -1,4 +1,32 @@
+<<<<<<< HEAD
  <div class="row">
+=======
+
+
+<div class="productcatnav" >
+  <div id="flipkart2-navbar">
+    <div class="container">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">分类浏览
+                <b class = "caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <% Category.all.each do |category| %>
+                <li><%= link_to(category.name, products_path(category_id: category))%></li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+>>>>>>> 57d18b3c85fe2f8e2b2e4116c5964a0df1c56ae5
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
       <%= link_to product_path(product) do %>
@@ -9,6 +37,18 @@
         <% end %>
       <% end %>
       <%= product.title %> $ <%= product.price %>
+<<<<<<< HEAD
     </div>
   <% end %>
 </div> 
+=======
+      类别：<%= Category.find(product.category_id).name %>
+      <% if !product.users.include?(current_user) %>
+        <%= link_to("收藏",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
+      <% else %>
+        <%= link_to("收藏", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+>>>>>>> 57d18b3c85fe2f8e2b2e4116c5964a0df1c56ae5

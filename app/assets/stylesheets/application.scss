@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require gritter
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+/* login css */
+/*===== user ====*/
+.user_setup{
+    height: 750px;
+    background: image_url("user_background.jpg") no-repeat scroll top center/ cover;
+}
+
+.user_setup_content{
+    background: #fff;
+
+    margin-top: 55px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 1px 3px 5px #333;
+
+    border: 5px solid #666;
+
+    border-radius: 25px;
+
+    opacity:0.95;
+    filter:alpha(opacity=95);
+
+    h2{
+      text-align: center;
+    }
+
+    .psw{
+      float: right;
+      margin-top: -33px;
+      position: relative;
+    }
+
+    .account{
+      text-align: center;
+    }
+
+    .form-inputs{
+      margin-top: 25px;
+    }
+
+    .form-actions{
+      text-align: center;
+      margin-top: 35px;
+      margin-bottom: 25px;
+
+      .button{
+        color: #fff;
+
+        background-color: #4A6BB5;
+
+        border-color: #4A6BB5;
+
+        font-size: 16px;
+        letter-spacing: 1px;
+        width: 100%;
+      }
+      .button:hover{
+          background-color: #4A99B5;
+
+          border-color: #4A99B5;
+
+          color: #fff;
+
+      }
+    }
+}
