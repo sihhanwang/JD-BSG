@@ -1,10 +1,11 @@
-class Category < ApplicationRecord
-  # 關聯 #
-  belongs_to :category_group
-  has_many :products
+class CategoryGroup < ApplicationRecord
   # 新增/修改欄位限制與提示 #
-  validates :name, presence: { message: "請輸入分類名稱" }
-  validates :category_group_id, presence: { message: "請選擇分類類型" }
+  validates :name, presence: true
+
+  # 關聯 #
+  has_many :categories
+
+
   # 發佈 / 隱藏 #
   def publish!
     self.is_hidden = false
@@ -15,7 +16,7 @@ class Category < ApplicationRecord
     self.is_hidden = true
     self.save
   end
+
   # Scope #
   scope :published, -> { where(is_hidden: false) }
-
 end

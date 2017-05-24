@@ -1,23 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  #--=== 首頁 ===--#
+  root 'welcome#index'
+  #--=== 前台 ===--#
 
-  namespace :admin do
-    resources :products
-    resources :categories
-    resources :orders do
-      member do
-        post :cancel
-        post :ship
-        post :shipped
-        post :return
-      end
-    end
-  end
-
-  namespace :account do
-    resources :orders
-  end
-
+   # 商品 #
   resources :products do
     member do
       post :add_to_cart
@@ -26,6 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
+   # 購物車 #
   resources :carts do
     collection do
       delete :clean
@@ -33,6 +21,7 @@ Rails.application.routes.draw do
     end
   end
 
+   # 訂單 #
   resources :orders do
     member do
       post :pay_with_alipy
@@ -41,12 +30,50 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories do
-	   resources :products
-   end
-
   resources :cart_items
 
-  root 'welcome#index'
+  #--=== 使用者專區 ===--#
+  namespace :account do
+
+     # 訂單記錄 #
+    resources :orders
+
+  end
+  #--=== 管理員專區 ===--#
+
+  namespace :admin do
+
+      # 產品 #
+    resources :products
+
+    # 類型 #
+    resources :category_groups do
+      member do
+        post :publish
+        post :hide
+      end
+    end
+
+    # 分類 #
+    resources :categories do
+      member do
+        post :publish
+        post :hide
+      end
+    end
+
+      # 訂單管理 #
+    resources :orders do
+      member do
+        post :cancel
+        post :ship
+        post :shipped
+        post :return
+      end
+    end
+
+  end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
