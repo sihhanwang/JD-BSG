@@ -1,0 +1,38 @@
+
+<div class="btn-group">
+  <!--=== 類型選單 ===-->
+  <% @category_groups.each do |category_group| %>
+    <div class='dropdown btn-group clearfix'>
+      <button class='btn dropdown-toggle' type='button' data-toggle='dropdown'>
+        <%= category_group.name %> <i class="fa fa-angle-down"></i>
+      </button>
+
+      <!-- 選項：列出該類型所有分類 -->
+      <ul class='dropdown-menu'>
+        <% category_group.categories.each do |category| %>
+          <li>
+            <%= link_to(category.name, products_path(:category => category.name)) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+<div class="path-box">
+  <!--=== 產品頁面路徑 ===-->
+  <div class="left-box">
+    <% if params[:id].present? %>
+    / <a href="../products?group=<%= @product.category.category_group.name %>"><%= @product.category.category_group.name %></a> / <a href="../products?category=<%= @product.category.name %>"><%= @product.category.name %></a> / <a href="<%= @product.id %>"><%= @product.name %></a>
+    <% elsif params[:category].present? %>
+    / <a href="products?group=<%= @category.category_group.name %>"><%= @category.category_group.name %></a> / <a href="products?category=<%= @category.name %>"><%= @category.name %></a>
+    <% elsif params[:group].present? %>
+    / <a href="products?group=<%= @group.name %>"><%= @group.name %></a>
+    <% elsif params[:brand].present? %>
+    / <a href="products?brand=<%= @brand.name %>"><%= @brand.name %></a>
+    <% end %>
+  </div>
+
+</div>
+<hr/>

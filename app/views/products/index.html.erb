@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
  <div class="row">
 =======
 
@@ -16,11 +17,32 @@
               <ul class="dropdown-menu">
                 <% Category.all.each do |category| %>
                 <li><%= link_to(category.name, products_path(category_id: category))%></li>
+=======
+<div class="product-box">
+  <div class="container">
+    <!--=== 商品類型 選單 ===-->
+    <%= render "products/menu" %>
+    <!--=== 商品列表 ===-->
+        <div class='row'>
+          <% @products.each_with_index do |product, index| %>
+            <div class='col-xs-12 col-sm-4 col-md-3 product-content'>
+              <%= link_to product_path(product) do %>
+                <!-- 商品圖片 -->
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
+>>>>>>> cbbb38e241f48eae72c982b9c84c28f43802eb9b
                 <% end %>
-              </ul>
-            </li>
-          </ul>
+              <% end %>
+              <div class="product-info">
+                <p><%= link_to(product.title , product_path(product)) %></p>
+                <p>$<%= product.price %></p>
+              </div>
+            </div>
+          <% end %>
         </div>
+<<<<<<< HEAD
       </div>
     </div>
 </div>
@@ -50,5 +72,8 @@
       <% end %>
     </div>
   <% end %>
+=======
+  </div>
+>>>>>>> cbbb38e241f48eae72c982b9c84c28f43802eb9b
 </div>
 >>>>>>> 57d18b3c85fe2f8e2b2e4116c5964a0df1c56ae5
