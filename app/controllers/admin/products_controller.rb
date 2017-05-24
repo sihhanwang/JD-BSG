@@ -6,10 +6,13 @@ class Admin::ProductsController < ApplicationController
   def index
     @products = Product.all
   end
+  def show
+    @product = Product.find(params[:id])
+  end
 
   def new
     @product = Product.new
-    @categories = Category.all.map { |c| [c.name, c.id] }
+    @categories = Category.all.order("category_group_id, name")
   end
 
   def create
@@ -24,11 +27,12 @@ class Admin::ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @categories = Category.all.map { |c| [c.name, c.id] }
+    @categories = Category.all.order("category_group_id, name")
   end
 
   def update
     @product = Product.find(params[:id])
+    @categories = Category.all.map { |c| [c.name, c.id] }
     @product.category_id = params[:category_id]
 
     if @product.update(product_params)
