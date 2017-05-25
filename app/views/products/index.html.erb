@@ -32,7 +32,6 @@
                   <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
                 <% else %>
                   <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
->>>>>>> cbbb38e241f48eae72c982b9c84c28f43802eb9b
                 <% end %>
               <% end %>
               <div class="product-info">
@@ -42,7 +41,6 @@
             </div>
           <% end %>
         </div>
-<<<<<<< HEAD
       </div>
     </div>
 </div>
@@ -62,7 +60,7 @@
 <<<<<<< HEAD
     </div>
   <% end %>
-</div> 
+</div>
 =======
       类别：<%= Category.find(product.category_id).name %>
       <% if !product.users.include?(current_user) %>
