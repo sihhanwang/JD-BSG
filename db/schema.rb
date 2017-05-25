@@ -42,13 +42,6 @@ ActiveRecord::Schema.define(version: 20170524150607) do
     t.boolean  "is_hidden",  default: true
   end
 
-  create_table "category_ships", force: :cascade do |t|
-    t.integer  "category_id"
-    t.integer  "product_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "product_id"

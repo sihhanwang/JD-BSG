@@ -40,8 +40,13 @@
     opacity:0.95;
     filter:alpha(opacity=95);
 
-    h2{
+    .h2{
       text-align: center;
+    }
+
+    .p{
+      font-size: 14px;
+      font-family: sans-serif;
     }
 
     .psw{
@@ -67,9 +72,7 @@
         color: #fff;
 
         background-color: #4A6BB5;
-
         border-color: #4A6BB5;
-
         font-size: 16px;
         letter-spacing: 1px;
         width: 100%;
