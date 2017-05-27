@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  def index
 
+  def index
     # 商品類型 / 品牌
     @category_groups = CategoryGroup.published
     #收藏
@@ -25,23 +25,6 @@ class ProductsController < ApplicationController
       else
         @products = Product.all
     end
-
-  end
-
-  def new
-     @categories = Category.all.map { |c| [c.name, c.id] }
-  end
-
-  def create
-     @product.category_id = params[:category_id]
-  end
-
-  def edit
-     @categories = Category.all.map { |c| [c.name, c.id] }
-  end
-
-  def update
-     @product.category_id = params[:category_id]
   end
 
   def show

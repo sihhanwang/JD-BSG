@@ -32,7 +32,6 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @categories = Category.all.map { |c| [c.name, c.id] }
     @product.category_id = params[:category_id]
 
     if @product.update(product_params)

@@ -1,51 +1,36 @@
-<div class="product-box">
-  <div class="container">
-    <!--=== 商品類型 選單 ===-->
-    <%= render "products/menu" %>
-    <!--=== 商品列表 ===-->
-        <div class='row'>
-          <% @products.each_with_index do |product, index| %>
-            <div class='col-xs-12 col-sm-4 col-md-3 product-content'>
-              <%= link_to product_path(product) do %>
-                <!-- 商品圖片 -->
-                <% if product.image.present? %>
-                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                  <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
-                <% end %>
-              <% end %>
-              <div class="product-info">
-                <p><%= link_to(product.title , product_path(product)) %></p>
-                <p>$<%= product.price %></p>
-              </div>
-            </div>
-          <% end %>
-        </div>
-  </div>
-</div>
-
-<!-- <html>
-<!-- w3-content defines a container for fixed size centered content,
-and is wrapped around the whole page content, except for the footer in this example -->
-<!-- <div class="w3-content" style="max-width:1400px">
-
-<!-- Header -->
+<!DOCTYPE html>
+<html>
+<!-- Header with image -->
 <header class="w3-container w3-center w3-padding-32">
-  <h1><b>Product list</b></h1>
-  <p>活动列表 <span class="w3-tag">unknown</span></p>
+    <br>
+     <h1 class="title, text-center"> 课程列表</h1>
+     <p><span class="w3-tag" style="background-color:grey">夏季课程</span></p>
 </header>
+
+<body>
+
 
 <!-- Grid -->
 <div class="w3-row">
+  <% @products.each_with_index do |product, index| %>
 
-<!-- Blog entries -->
+  <!--=== 商品列表 ===-->
 <div class="w3-col l8 s12">
-  <!-- Blog entry -->
+  <%= link_to product_path(product) do %>
   <div class="w3-card-4 w3-margin w3-white">
-    <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
+    <!-- 商品圖片 -->
+    <% if product.image.present? %>
+      <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
+    <% end %>
+    <% end %>
+
+    <!-- <img src="/w3images/woods.jpg" alt="Nature" style="width:100%"> -->
+    <!-- 商品信息 -->
     <div class="w3-container">
-      <h3><b>TITLE HEADING</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+      <h3><b><%= link_to(product.title , product_path(product)) %></b></h3>
+      <h5>Title description, <span class="w3-opacity">$<%= product.price %></span></h5>
     </div>
 
     <div class="w3-container">
@@ -101,7 +86,7 @@ and is wrapped around the whole page content, except for the footer in this exam
   <!-- Posts -->
   <div class="w3-card-2 w3-margin">
     <div class="w3-container w3-padding">
-      <h4>Popular Posts</h4>
+      <h4>热门课程</h4>
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <li class="w3-padding-16">
@@ -147,17 +132,20 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 
 <!-- END GRID -->
-</div><br>
+<% end %></div><br>
 
 <!-- END w3-content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
 
 </body>
 </html>
+
+<!---- 倒计时 ------>
+<div id="getting-started"></div>
+<script type="text/javascript">
+  $("#getting-started")
+  .countdown("<%= Time.zone.now + 2.days %>", function(event) {
+    $(this).text(
+      event.strftime('%D days %H:%M:%S')
+    );
+  });
+</script>
