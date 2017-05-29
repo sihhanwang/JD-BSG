@@ -25,15 +25,8 @@ class ProductsController < ApplicationController
       else
         @products = Product.all
     end
-<<<<<<< HEAD
-
   end
 
-  
-=======
-  end
-
->>>>>>> 695a10755862b232f9b1e31e4454521442974b12
   def show
     @product = Product.find(params[:id])
     @category_groups = CategoryGroup.published
