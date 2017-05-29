@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  def index
 
+  def index
     # 商品類型 / 品牌
     @category_groups = CategoryGroup.published
     #收藏
@@ -25,10 +25,15 @@ class ProductsController < ApplicationController
       else
         @products = Product.all
     end
+<<<<<<< HEAD
 
   end
 
   
+=======
+  end
+
+>>>>>>> 695a10755862b232f9b1e31e4454521442974b12
   def show
     @product = Product.find(params[:id])
     @category_groups = CategoryGroup.published

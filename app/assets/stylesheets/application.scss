@@ -1,23 +1,12 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require gritter
- */
-
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Six+Caps');
+@import url('https://fonts.googleapis.com/css?family=Medula+One');
+@import url(http://fonts.googleapis.com/css?family=helvetica);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
 /* login css */
 /*===== user ====*/
 .user_setup{
@@ -39,6 +28,8 @@
 
     opacity:0.95;
     filter:alpha(opacity=95);
+  }
+
 
     .h2{
       text-align: center;
@@ -67,23 +58,218 @@
       text-align: center;
       margin-top: 35px;
       margin-bottom: 25px;
-
-      .button{
-        color: #fff;
-
-        background-color: #4A6BB5;
-        border-color: #4A6BB5;
-        font-size: 16px;
-        letter-spacing: 1px;
-        width: 100%;
-      }
-      .button:hover{
-          background-color: #4A99B5;
-
-          border-color: #4A99B5;
-
-          color: #fff;
-
-      }
     }
+
+    .button{
+      color: #fff;
+
+      background-color: #4A6BB5;
+      border-color: #4A6BB5;
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+
+    .button:hover{
+        background-color: #4A99B5;
+        border-color: #4A99B5;
+        color: #fff;
+    }
+
+
+  /****** welcome header ******/
+  .video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
 }
+
+.video {
+   position: fixed;
+   top: 50%; left: 50%;
+   z-index: 1;
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   transform: translate(-50%, -50%);
+}
+
+.div1 {
+    width: 800px;
+    height: 300px;
+    background-color: blue;
+    box-sizing: border-box;
+}
+
+.p1 {
+  font-size: 14px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: sans-serif;
+  font-size: 32px;
+}
+
+.container {
+  max-width: 82.625em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 4.155%;
+  margin-right: 4.155%;
+}
+  .container::after {
+    clear: both;
+    content: "";
+    display: table; }
+    @media only screen and (min-width: 90em) {
+
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+.inner-container {
+  float: left;
+  display: block;
+  margin-right: 1.7816%;
+  width: 85.4598%;
+  margin-left: 7.2701%; }
+  .inner-container:last-child {
+    margin-right: 0; }
+
+
+  /****** welcome intro ******/
+  .jumbotron {
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: 0px;
+      margin-bottom: 50px;
+      padding-bottom: 500px;
+    }
+
+    .box-inner {
+        background-color: rgba(250, 250, 250, 0.69);
+        padding-bottom: 5px;
+        margin-top: 300px;
+        margin-bottom: 150px;
+    }
+
+    .title {
+        color: #ffffff;
+        font-family: 'Anton', sans-serif;
+        font-size: 100px;
+        margin-top: 230px;
+        margin-bottom: 80px;
+        padding: 0px 50px 0;
+    }
+
+    .slogan {
+      color: #ffffff;
+      font-family: Calibre thin;
+      margin-top: 10px;
+      margin-bottom: 50px;
+      font-size: 25px;
+      padding: 0px 50px 0;
+  }
+
+    .lead {
+          margin-bottom: 60px;
+          padding: 0px 50px 0;
+      }
+
+  /****** welcome section ******/
+    .jumbotron {
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 0px;
+        margin-bottom: 50px;
+        padding-bottom: 500px;
+      }
+
+      .box {
+        background-color: #f8f8f8;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 50px;
+      }
+
+      .box-inner {
+         background-color: #f8f8f8;
+         padding-bottom: 5px;
+         margin-top: 150px;
+         margin-bottom: 150px;
+         width: 800px;
+         height: 300px;
+     }
+
+
+    //---------Content---------
+
+  .content-section-a {
+    padding: 5px;
+    background-color: #f8f8f8;
+  }
+
+  .content-section-b {
+    padding: 3px;
+  }
+
+  .section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  //------------product index------
+  .date {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #938454;
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+  .img {
+      position: relative;
+      float: left;
+      width:  100%;
+      height: 283px;
+      background-position: 50% 50%;
+      background-repeat:   no-repeat;
+      background-size:     cover;
+  }
+
+  .side-img {
+      position: relative;
+      float: left;
+      width:  100%;
+      height: 300px;
+      background-position: 15% 15%;
+      background-repeat:   no-repeat;
+      background-size:     cover;
+  }
+
+  .title-img {
+      margin-top: -30px;
+      margin-bottom: 50px;
+      float: left;
+      width:  100%;
+      height: 300px;
+      background-position: 15% 15%;
+      background-repeat:   no-repeat;
+      background-size:     cover;
+  }
+//---------w3.css-------
+// .w3-image{max-width:100%;height:auto}img{margin-bottom:-5px}a{color:inherit}

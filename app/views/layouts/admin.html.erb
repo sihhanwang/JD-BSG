@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JDstore 后台</title>
+  <title>课程管理后台</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,9 +12,9 @@
     <div class="row">
       <div class="col-md-2">
         <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-          <li> <%= link_to("產品管理", admin_products_path) %> </li>
-          <li> <%= link_to("訂單管理", admin_orders_path) %> </li>
-          <li> <%= link_to("分類管理", admin_categories_path) %> </li>
+          <li> <%= link_to("课程管理", admin_products_path) %> </li>
+          <li> <%= link_to("订单管理", admin_orders_path) %> </li>
+          <li> <%= link_to("分类管理", admin_categories_path) %> </li>
         </ul>
       </div>
       <div class="col-md-10">
