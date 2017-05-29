@@ -1,59 +1,254 @@
-<div class="product-box">
-  <div class="container">
-    <!--=== 商品類型 選單 ===-->
-    <%= render "products/menu" %>
-    <!--=== 商品列表 ===-->
-        <div class='row'>
-          <% @products.each_with_index do |product, index| %>
-            <div class='col-xs-12 col-sm-4 col-md-3 product-content'>
-              <%= link_to product_path(product) do %>
-                <!-- 商品圖片 -->
-                <% if product.image.present? %>
-                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                  <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
-                <% end %>
-              <% end %>
-              <div class="product-info">
-                <p><%= link_to(product.title , product_path(product)) %></p>
-                <p>$<%= product.price %></p>
-              </div>
-            </div>
-          <% end %>
-        </div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Helvetica", "Microsoft Yahei", sans-serif}
+</style>
+</head>
 
-<!-- <html>
+
+<body>
+
 <!-- w3-content defines a container for fixed size centered content,
 and is wrapped around the whole page content, except for the footer in this example -->
-<!-- <div class="w3-content" style="max-width:1400px">
-
 <!-- Header -->
-<header class="w3-container w3-center w3-padding-32">
-  <h1><b>Product list</b></h1>
-  <p>活动列表 <span class="w3-tag">unknown</span></p>
+<div class="title-img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');">
+   <br>
+   <br>
+   <br>
+   <br>
+   <h1 class="text-center" style="color:white">课程列表</h1>
+   <p class="text-center" style="color:white">欢迎来到 <span class="w3-tag" style="color:highlight">夏季课程</span></p>
+    </div>
+
+<!-- <header class="title-img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');"> -->
+  <!-- <h1><b>课程列表</b></h1>
+  <p>欢迎来到<span class="w3-tag">夏季课程</span></p> -->
+  <!-- <div class="title-img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');"></div> -->
 </header>
 
-<!-- Grid -->
+
+<div class="w3-content" style="max-width:1400px">
+
+<!-- 课程列表 -->
 <div class="w3-row">
 
-<!-- Blog entries -->
+<!-- 列表左侧栏 -->
 <div class="w3-col l8 s12">
-  <!-- Blog entry -->
+  <!-- 课程1 -->
   <div class="w3-card-4 w3-margin w3-white">
-    <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
+    <div class="img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');"></div>
     <div class="w3-container">
-      <h3><b>TITLE HEADING</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+      <br><h3><b>55天马甲线女神计划</b></h3>
+      <p><span class="w3-tag" style="background-color:red">线下课程</span> <span class="w3-tag" style="background-color:navy">线上体验</span></p>
+      <p><span class="w3-opacity">April 7, 2017</span> <i class="fa fa-map-marker" aria-hidden="true"> 波士顿</i></p>
     </div>
 
     <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <p>联合波士顿地区顶级健身教练， 为你量身定制最全面的马甲线训练计划； 线上私教深度指导，全面解析健身知识； 线下一对一配对sweat buddy训练监督伙伴， 大家一起变女神！</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>课程详情 »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>已报名人数 &nbsp;</b> <span class="w3-tag">7</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- 课程2 -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="img" style="background-image:url('https://static.pexels.com/photos/29578/pexels-photo.jpg');"></div>
+    <div class="w3-container">
+      <br><h3><b>周日户外慢跑+早午餐</b></h3>
+      <p><span class="w3-tag" style="background-color:green">户外慢跑</span></p>
+      <p><span class="w3-opacity">April 7, 2017</span> <i class="fa fa-map-marker" aria-hidden="true"> 查尔斯河沿线</i> <i class="fa fa-road" aria-hidden="true"> 3.2 miles</i>
+      </p>
+    </div>
+
+    <div class="w3-container">
+      <p>本次户外跑将从从Cambridge Galleria出发，沿查尔斯河进行慢跑，总里程为3.2公里。慢跑结束后还会有Haute Cafe提供的专属早餐折扣，尽情享受美妙的周日清晨吧！</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>课程详情 »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>已报名人数 &nbsp;</b> <span class="w3-tag">11</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- 课程3 -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="img" style="background-image:url('https://static.pexels.com/photos/186849/pexels-photo-186849.jpeg');"></div>
+    <div class="w3-container">
+      <br><h3><b>Jillian x Stephanie 夏日减脂方案</b></h3>
+      <p><span class="w3-tag" style="background-color:red">线下课程</span> <span class="w3-tag" style="background-color:navy">线上体验</span></p>
+      <p><span class="w3-opacity">April 7, 2017</span> <i class="fa fa-map-marker" aria-hidden="true"> 波士顿</i></p>
+    </div>
+
+    <div class="w3-container">
+      <p>跟美国权威ACE私教认证的元气教练Jillian一起，在查尔斯河边HIIT燃脂！</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>课程详情 »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>已报名人数 &nbsp;</b> <span class="w3-tag">3</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+<!-- 左侧课程栏结束 -->
+</div>
+
+<!-- 右侧栏 -->
+<div class="w3-col l4">
+  <!-- 教练介绍 -->
+  <div class="w3-card-2 w3-margin w3-margin-top">
+    <div class="side-img" style="background-image:url('http://mmbiz.qpic.cn/mmbiz_jpg/KJOGDn2aL15EoyTWq0seSyC44dicB2FLgbtJOsWnB0YNicKL04pwAdHUufXy54RnHoV3mufEpg3jaYRc8ibicYJY7Q/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1');"></div>
+    <div class="w3-container w3-white">
+      <br><h4><b>元气美女Jilian</b></h4>       <span class="w3-tag" style="background-color:red">人气教练</span></p><hr>
+      <p>这个95年的妹子还没毕业就已经考取美国最权威的ACE私教认证，拳击，瑜伽，跑步，芭蕾她样样都爱。</p>
+      <p><button class="w3-button w3-padding-large w3-white w3-border" href="https://mp.weixin.qq.com/s?src=3&timestamp=1495979765&ver=1&signature=3Cc6w46cc5qXVaM01hNcB7LbP*9c143no5ny83FTH4i6Vpp9mIjlID*OSmr*hKKitZTMumqzrs8Vqcc6igy99Rm0QRA3dZEsyeP0GNRhAjkFZPz9RWfUhYrrgwnDqRPtBdmzDu0NuN95Hud8bBKi5gr*dkmsF6czxkDveaJzsYg="><b>认识教练 »</b></button></p>
+    </div>
+  </div><hr>
+
+  <!-- 学员体验 -->
+  <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4># 我是BosGal</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16" href="http://bit.ly/2rd1iNB">
+        <img src="http://bit.ly/2rd4CIt" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">这个姑娘拉了一票波士顿的运动女神，到底想干嘛？</span><br>
+        <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
+      </li>
+      <li class="w3-padding-16">
+        <img src="http://bit.ly/2r27xD6" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">元气少女的早餐长什么样？</span><br>
+        <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
+      </li>
+      <li class="w3-padding-16">
+        <img src="http://bit.ly/2raT0DO" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">波士顿慢跑+早午餐指南</span><br>
+        <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
+      </li>
+    </ul>
+  </div>
+  <hr>
+
+
+
+<!-- Instagram窗口 -->
+<div class="w3-card-2 w3-margin">
+  <div class="w3-container w3-padding">
+    <h4>活动回顾</h4>
+    </div>
+    <script src="//lightwidget.com/widgets/lightwidget.js">
+    </script><iframe src="//lightwidget.com/widgets/e8e6da2cfd455108835373104697f446.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+  </div>
+
+
+
+  <!-- 热门标签 -->
+  <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>热门标签</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-black w3-margin-bottom">户外慢跑</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">线下课程</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">线上体验</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">人气教练</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">线上课程</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">波士顿</span>
+    </p>
+    </div>
+  </div>
+
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Header with image -->
+<!-- <header class="w3-container w3-center w3-padding-32" >
+    <br>
+     <h1 class="title, text-center"> 课程列表</h1>
+     <p><span class="w3-tag" style="background-color:grey">夏季课程</span></p>
+</header>
+
+<body> -->
+
+
+<!-- Grid -->
+<!-- <div class="w3-row">
+  <% @products.each_with_index do |product, index| %> -->
+
+  <!--=== 商品列表 ===-->
+<!-- <div class="w3-col l8 s12">
+  <%= link_to product_path(product) do %>
+  <div class="w3-card-4 w3-margin w3-white"> -->
+
+    <!-- 商品圖片 -->
+    <!-- <% if product.image.present? %>
+      <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
+    <% end %>
+    <% end %>
+    <!-- 商品信息 -->
+    <!-- <div class="w3-container">
+      <h3><b><%= link_to(product.title , product_path(product)) %></b></h3>
+      <h5><span class="w3-opacity">$<%= product.price %></span></h5>
+      <!---- 倒计时 ------>
+      <!-- <div id="getting-started"></div>
+      <script type="text/javascript">
+        $("#getting-started")
+        .countdown("<%= Time.zone.now + 2.days %>", function(event) {
+          $(this).text(
+            event.strftime('%D days %H:%M:%S')
+          );
+        });
+      </script>
+    </div>
+    <div class="w3-container">
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>课程详情 »</b></button></p>
         </div>
         <div class="w3-col m4 w3-hide-small">
           <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
@@ -61,47 +256,27 @@ and is wrapped around the whole page content, except for the footer in this exam
       </div>
     </div>
   </div>
-  <hr>
-
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-  <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
-    <div class="w3-container">
-      <h3><b>BLOG ENTRY</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- END BLOG ENTRIES -->
 </div>
+<% end %>  -->
 
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card-2 w3-margin w3-margin-top">
-  <img src="/w3images/avatar_g.jpg" style="width:100%">
+
+<!-- 侧边栏 -->
+<!-- <div class="w3-col l4">
+  <!-- 教练信息 -->
+  <!-- <div class="w3-card-2 w3-margin w3-margin-top">
+  <img src="http://mmbiz.qpic.cn/mmbiz_jpg/KJOGDn2aL15EoyTWq0seSyC44dicB2FLgsHicMtqmyZesAmviaRlm7smxpHtRDAGlFl5txjibJQdJTD4y2Liav8wvrg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1" style="width:100%">
     <div class="w3-container w3-white">
-      <h4><b>My Name</b></h4>
-      <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
+      <h4><b>明星教练</b></h4>
+      <p>JJillian</p>
+      <p>ACE私教认证, 擅长拳击，瑜伽，跑步，芭蕾</p>
+      <p><button class="w3-button w3-padding-large w3-white w3-border"><b>课程详情 »</b></button></p>
     </div>
-  </div><hr>
+  </div><hr>  -->
 
-  <!-- Posts -->
-  <div class="w3-card-2 w3-margin">
+  <!-- 热门课程 -->
+  <!-- <div class="w3-card-2 w3-margin">
     <div class="w3-container w3-padding">
-      <h4>Popular Posts</h4>
+      <h4>热门课程</h4>
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <li class="w3-padding-16">
@@ -126,22 +301,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       </li>
     </ul>
   </div>
-  <hr>
-
-  <!-- Labels / tags -->
-  <div class="w3-card-2 w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Tags</h4>
-    </div>
-    <div class="w3-container w3-white">
-    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
-    </p>
-    </div>
-  </div>
+  <hr> -->
 
 <!-- END Introduction Menu -->
 </div>
@@ -150,14 +310,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div><br>
 
 <!-- END w3-content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
 
 </body>
 </html>
