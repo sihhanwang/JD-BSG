@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   #--=== 首頁 ===--#
-  root 'welcome#index'
+  root 'welcome#home'
   #--=== 前台 ===--#
 
    # 商品 #
