@@ -13,9 +13,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Helvetica", "Microsoft Yahei", sans-serif}
 
 <body>
 
-<!-- w3-content defines a container for fixed size centered content,
-and is wrapped around the whole page content, except for the footer in this example -->
-<!-- Header -->
 <div class="title-img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');">
    <br>
    <br>
@@ -25,11 +22,7 @@ and is wrapped around the whole page content, except for the footer in this exam
    <p class="text-center" style="color:white">欢迎来到 <span class="w3-tag" style="color:highlight">夏季课程</span></p>
     </div>
 
-<!-- <header class="title-img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');"> -->
-  <!-- <h1><b>课程列表</b></h1>
-  <p>欢迎来到<span class="w3-tag">夏季课程</span></p> -->
-  <!-- <div class="title-img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');"></div> -->
-</header>
+
 
 
 <div class="w3-content" style="max-width:1400px">
@@ -40,22 +33,27 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- 课程列表 -->
 <div class="w3-row">
 
-<!-- 列表左侧栏 -->
+
+
+<!-- testing -->
 <div class="w3-col l8 s12">
+  <% @products.each_with_index do |product, index| %>
+
   <!-- 课程1 -->
   <div class="w3-card-4 w3-margin w3-white">
-    <div class="img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');"></div>
+  <div class="img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');"></div>
     <div class="w3-container">
-      <br><h3><b>55天马甲线女神计划</b></h3>
+      <br><h3><b><%= link_to(product.title , product_path(product)) %></b></h3>
       <p><span class="w3-tag" style="background-color:red">线下课程</span> <span class="w3-tag" style="background-color:navy">线上体验</span></p>
       <p><span class="w3-opacity">April 7, 2017</span> <i class="fa fa-map-marker" aria-hidden="true"> 波士顿</i></p>
+      <h5><span class="w3-opacity">$<%= product.price %></span></h5>
     </div>
 
     <div class="w3-container">
       <p>联合波士顿地区顶级健身教练， 为你量身定制最全面的马甲线训练计划； 线上私教深度指导，全面解析健身知识； 线下一对一配对sweat buddy训练监督伙伴， 大家一起变女神！</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>课程详情 »</b></button></p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to("课程详情 »" , product_path(product)) %></b></button></p>
         </div>
         <div class="w3-col m4 w3-hide-small">
           <p><span class="w3-padding-large w3-right"><b>已报名人数 &nbsp;</b> <span class="w3-tag">7</span></span></p>
@@ -63,65 +61,17 @@ and is wrapped around the whole page content, except for the footer in this exam
       </div>
     </div>
   </div>
-  <hr>
-
-  <!-- 课程2 -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="img" style="background-image:url('https://static.pexels.com/photos/29578/pexels-photo.jpg');"></div>
-    <div class="w3-container">
-      <br><h3><b>周日户外慢跑+早午餐</b></h3>
-      <p><span class="w3-tag" style="background-color:green">户外慢跑</span></p>
-      <p><span class="w3-opacity">April 7, 2017</span> <i class="fa fa-map-marker" aria-hidden="true"> 查尔斯河沿线</i> <i class="fa fa-road" aria-hidden="true"> 3.2 miles</i>
-      </p>
-    </div>
-
-    <div class="w3-container">
-      <p>本次户外跑将从从Cambridge Galleria出发，沿查尔斯河进行慢跑，总里程为3.2公里。慢跑结束后还会有Haute Cafe提供的专属早餐折扣，尽情享受美妙的周日清晨吧！</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>课程详情 »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>已报名人数 &nbsp;</b> <span class="w3-tag">11</span></span></p>
-        </div>
-      </div>
-    </div>
   </div>
-  <hr>
 
-  <!-- 课程3 -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="img" style="background-image:url('https://static.pexels.com/photos/186849/pexels-photo-186849.jpeg');"></div>
-    <div class="w3-container">
-      <br><h3><b>Jillian x Stephanie 夏日减脂方案</b></h3>
-      <p><span class="w3-tag" style="background-color:red">线下课程</span> <span class="w3-tag" style="background-color:navy">线上体验</span></p>
-      <p><span class="w3-opacity">April 7, 2017</span> <i class="fa fa-map-marker" aria-hidden="true"> 波士顿</i></p>
-    </div>
+  <!--testing end -->
 
-    <div class="w3-container">
-      <p>跟美国权威ACE私教认证的元气教练Jillian一起，在查尔斯河边HIIT燃脂！</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>课程详情 »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>已报名人数 &nbsp;</b> <span class="w3-tag">3</span></span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr>
 
-<!-- 左侧课程栏结束 -->
-</div>
-
-<!-- testing end --->
 
 <!-- 右侧栏 -->
 <div class="w3-col l4">
   <!-- 教练介绍 -->
   <div class="w3-card-2 w3-margin w3-margin-top">
-    <div class="side-img" style="background-image:url('http://mmbiz.qpic.cn/mmbiz_jpg/KJOGDn2aL15EoyTWq0seSyC44dicB2FLgbtJOsWnB0YNicKL04pwAdHUufXy54RnHoV3mufEpg3jaYRc8ibicYJY7Q/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1');"></div>
+    <div class="side-img" style="background-image:url('http://i4.buimg.com/519918/3d0858ca34304214.png');"></div>
     <div class="w3-container w3-white">
       <br><h4><b>元气美女Jilian</b></h4>       <span class="w3-tag" style="background-color:red">人气教练</span></p><hr>
       <p>这个95年的妹子还没毕业就已经考取美国最权威的ACE私教认证，拳击，瑜伽，跑步，芭蕾她样样都爱。</p>
@@ -183,7 +133,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 
 <!-- END GRID -->
-</div><br>
+<br>
+</div>
 
 <!-- END w3-content -->
 </div>
@@ -290,3 +241,4 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 </body>
 </html>
+<% end %>
