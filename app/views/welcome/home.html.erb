@@ -51,17 +51,23 @@ body, html {height: 100%}
 
 <div class="bg-container-fluid">
 <div class="container-video w3-display-container w3-text-white">
-<video autoplay=""  preload="true"  loop="" muted="" style="height: 200%; width: 120%; margin-top: -20px; margin-bottom: -50px; margin-left: -20px; margin-right: -20px;">
+<video autoplay=""  preload="true"  loop="" muted="" style="height: 200%; width: 120%; margin-top: -20px; margin-bottom: -50px; margin-left: -20px; margin-right: -20px;" >
 <source src="http://images.lululemon.com/is/content/lululemon/homepageAssets/Hero%20video/traintime_5sec_updated.mp4" type="video/webm">
+<img src="https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$" title="Your browser does not support the <video> tag">
 </video>
   <div class="w3-display-middle w3-jumbo text-center">
+    <br>
+    <br>
     <img src="http://i1.piimg.com/519918/13309dbd2096ba35.png" alt="BosGalRun" style="width:25%">
     <p style="font-size: 32px;">- BosGalRun -</p>
-    <p style="font-size: 32px;">元气少女慢跑社区</p><hr>
+    <p style="font-size: 32px;">元气少女慢跑社区</p>
+    <br>
+    <br>
     <p class="text-center" style="font-size: 20px; color: lightgrey;">
-    <button onclick="document.getElementById('menu').style.display='block'" class="w3-button">夏季课程</button>
-    <button onclick="document.getElementById('menu').style.display='block'" class="w3-button">周末元气跑</button>
-    <button onclick="document.getElementById('contact').style.display='block'" class="w3-button">马甲线女神计划</button>
+    <%= link_to("周末元气跑", products_path, :method => :get, :class => "btn btn-md") %>/
+    <%= link_to("马甲线女神计划", products_path, :method => :get, :class => "btn btn-md") %>/
+    <%= link_to("Styling Show", products_path, :method => :get, :class => "btn btn-md") %>
+
   </p>
   </div>
   <!-- <div class="w3-display-topmiddle w3-container w3-large">

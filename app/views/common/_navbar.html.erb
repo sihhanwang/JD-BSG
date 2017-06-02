@@ -27,7 +27,7 @@
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
            <li class="active">
-             <%= link_to("Products", products_path) %>
+             <%= link_to("课程列表", products_path) %>
            </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -49,12 +49,12 @@
                <ul class="dropdown-menu">
                  <% if current_user.admin? %>
                    <li>
-                    <%= link_to("後台列表管理", admin_products_path ) %>
+                    <%= link_to("后台管理", admin_products_path ) %>
                    </li>
 
                  <% end %>
                  <li class="divider"> </li>
-                   <li> <%= link_to("我的訂單", account_orders_path )%> </li>
+                   <li> <%= link_to("我的订单", account_orders_path )%> </li>
                    <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%> </li>
                  <li class="divider"> </li>
                    <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
