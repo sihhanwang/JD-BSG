@@ -1,145 +1,226 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Helvetica", "Microsoft Yahei", sans-serif}
-</style>
-</head>
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+    body,h1,h2,h3,h4,h5 {font-family: "Helvetica", "Microsoft Yahei", sans-serif}
+    </style>
+    </head>
 
 
-<body>
-
-<div class="title-img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');">
-   <br>
-   <br>
-   <br>
-   <br>
-   <h1 class="text-center" style="color:white">课程列表</h1>
-   <p class="text-center" style="color:white">欢迎来到 <span class="w3-tag" style="color:highlight">夏季课程</span></p>
+    <body>
+    <div class="title-img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');">
+       <br>
+       <br>
+       <br>
+       <br>
+       <h1 class="text-center" style="color:white">课程列表</h1>
+      <p class="text-center" style="color:white">欢迎来到 <span class="w3-tag" style="color:highlight">夏季课程</span></p>
     </div>
 
 
+        <div class="product-index">
+        <div class="container">
+          <!-- 左側：產品列表，佔 8/12 -->
+          <section class="col-md-8 main">
+            <% @products.each_with_index do |product, index| %>
+              <!-- 单个产品 -->
+              <div class="row">
+                <div class="w3-card-4 w3-margin w3-white">
+                  <!-- 产品图 -->
+                <div class="clip">
+                <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "clip") %>
+                <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "clip") %>
+                <% end %>
+                </div>
+                <!-- 产品信息部分 -->
+                <div class="w3-container">
+                  <%= link_to(product.title , product_path(product)) %>
+                <h5><span class="w3-opacity">$<%= product.price %></span></h5>
+                </div>
+                </div>
+              </div>
+            <% end %>
+          </section>
 
 
-<div class="w3-content" style="max-width:1400px">
-
-
-<!-- testing --->
-
-<!-- 课程列表 -->
-<div class="w3-row">
 
 
 
-<!-- testing -->
-<div class="w3-col l8 s12">
-  <% @products.each_with_index do |product, index| %>
 
-  <!-- 课程1 -->
-  <div class="w3-card-4 w3-margin w3-white">
-  <div class="img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');"></div>
-    <div class="w3-container">
-      <br><h3><b><%= link_to(product.title , product_path(product)) %></b></h3>
-      <p><span class="w3-tag" style="background-color:red">线下课程</span> <span class="w3-tag" style="background-color:navy">线上体验</span></p>
-      <p><span class="w3-opacity">April 7, 2017</span> <i class="fa fa-map-marker" aria-hidden="true"> 波士顿</i></p>
-      <h5><span class="w3-opacity">$<%= product.price %></span></h5>
-    </div>
+          <!-- 右側：廣告欄位，佔 4/12 -->
+          <section class="col-md-4 side">
+            <!-- 元氣美女 -->
+            <section class="coach-box">
+              <div class="w3-card-2 w3-margin w3-margin-top">
+                <div class="side-img" style="background-image:url('http://i4.buimg.com/519918/3d0858ca34304214.png');"></div>
+                <div class="w3-container w3-white">
+                  <br><h4><b>元气美女Jilian</b></h4>       <span class="w3-tag" style="background-color:red">人气教练</span></p><hr>
+                  <p>这个95年的妹子还没毕业就已经考取美国最权威的ACE私教认证，拳击，瑜伽，跑步，芭蕾她样样都爱。</p>
+                  <p><button class="w3-button w3-padding-large w3-white w3-border" href="https://mp.weixin.qq.com/s?src=3&timestamp=1495979765&ver=1&signature=3Cc6w46cc5qXVaM01hNcB7LbP*9c143no5ny83FTH4i6Vpp9mIjlID*OSmr*hKKitZTMumqzrs8Vqcc6igy99Rm0QRA3dZEsyeP0GNRhAjkFZPz9RWfUhYrrgwnDqRPtBdmzDu0NuN95Hud8bBKi5gr*dkmsF6czxkDveaJzsYg="><b>认识教练 »</b></button></p>
+                </div>
+              </div><hr>
+            </section>
 
-    <div class="w3-container">
-      <p>联合波士顿地区顶级健身教练， 为你量身定制最全面的马甲线训练计划； 线上私教深度指导，全面解析健身知识； 线下一对一配对sweat buddy训练监督伙伴， 大家一起变女神！</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to("课程详情 »" , product_path(product)) %></b></button></p>
+            <!-- 我是 BosGal -->
+            <section class="bos-girl-box">
+              <div class="w3-card-2 w3-margin">
+                <div class="w3-container w3-padding">
+                  <h4># 我是BosGal</h4>
+                </div>
+                <ul class="w3-ul w3-hoverable w3-white">
+                  <li class="w3-padding-16" href="http://bit.ly/2rd1iNB">
+                    <img src="http://bit.ly/2rd4CIt" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                    <span class="w3-large">这个姑娘拉了一票波士顿的运动女神，到底想干嘛？</span><br>
+                    <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
+                  </li>
+                  <li class="w3-padding-16">
+                    <img src="http://bit.ly/2r27xD6" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                    <span class="w3-large">元气少女的早餐长什么样？</span><br>
+                    <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
+                  </li>
+                  <li class="w3-padding-16">
+                    <img src="http://bit.ly/2raT0DO" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                    <span class="w3-large">波士顿慢跑+早午餐指南</span><br>
+                    <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
+                  </li>
+                </ul>
+              </div>
+              <hr>
+            </section>
+
+            <!-- 活動回顧 -->
+            <section class="event-box">
+              <div class="w3-card-2 w3-margin">
+                <div class="w3-container w3-padding">
+                  <h4>活动回顾</h4>
+                </div>
+                <script src="//lightwidget.com/widgets/lightwidget.js">
+                </script><iframe src="//lightwidget.com/widgets/e8e6da2cfd455108835373104697f446.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+              </div>
+            </section>
+           </section>
+         </div>
+       </div>
+     </body>
+   </html>
+
+
+
+<!-- fix bug -->
+    <!-- <div class="w3-content" style="max-width:1400px">
+
+
+    <div class="w3-row">
+    <!-- 课程列表 -->
+    <!-- <div class="w3-col l8 s12">
+      <% @products.each_with_index do |product, index| %> -->
+
+      <!-- 课程1 -->
+      <!-- <div class="w3-card-4 w3-margin w3-white">
+      <div class="img" style="background-image:url('https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$');"></div>
+        <div class="w3-container">
+          <br><h3><b><%= link_to(product.title , product_path(product)) %></b></h3>
+          <p><span class="w3-tag" style="background-color:red">线下课程</span> <span class="w3-tag" style="background-color:navy">线上体验</span></p>
+          <p><span class="w3-opacity">April 7, 2017</span> <i class="fa fa-map-marker" aria-hidden="true"> 波士顿</i></p>
+          <h5><span class="w3-opacity">$<%= product.price %></span></h5>
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>已报名人数 &nbsp;</b> <span class="w3-tag">7</span></span></p>
+
+        <div class="w3-container">
+          <p>联合波士顿地区顶级健身教练， 为你量身定制最全面的马甲线训练计划； 线上私教深度指导，全面解析健身知识； 线下一对一配对sweat buddy训练监督伙伴， 大家一起变女神！</p>
+          <div class="w3-row">
+            <div class="w3-col m8 s12">
+              <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to("课程详情 »" , product_path(product)) %></b></button></p>
+            </div>
+            <div class="w3-col m4 w3-hide-small">
+              <p><span class="w3-padding-large w3-right"><b>已报名人数 &nbsp;</b> <span class="w3-tag">7</span></span></p> <% end %>
+            </div>
+          </div>
         </div>
       </div>
+      </div> -->
+
+
+
+
+    <!-- 右侧栏 -->
+    <!-- <div class="w3-col l4">
+      <!-- 教练介绍 -->
+      <!-- <div class="w3-card-2 w3-margin w3-margin-top">
+        <div class="side-img" style="background-image:url('http://i4.buimg.com/519918/3d0858ca34304214.png');"></div>
+        <div class="w3-container w3-white">
+          <br><h4><b>元气美女Jilian</b></h4>       <span class="w3-tag" style="background-color:red">人气教练</span></p><hr>
+          <p>这个95年的妹子还没毕业就已经考取美国最权威的ACE私教认证，拳击，瑜伽，跑步，芭蕾她样样都爱。</p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border" href="https://mp.weixin.qq.com/s?src=3&timestamp=1495979765&ver=1&signature=3Cc6w46cc5qXVaM01hNcB7LbP*9c143no5ny83FTH4i6Vpp9mIjlID*OSmr*hKKitZTMumqzrs8Vqcc6igy99Rm0QRA3dZEsyeP0GNRhAjkFZPz9RWfUhYrrgwnDqRPtBdmzDu0NuN95Hud8bBKi5gr*dkmsF6czxkDveaJzsYg="><b>认识教练 »</b></button></p>
+        </div>
+      </div><hr> -->
+
+      <!-- 学员体验 -->
+      <!-- <div class="w3-card-2 w3-margin">
+        <div class="w3-container w3-padding">
+          <h4># 我是BosGal</h4>
+        </div>
+        <ul class="w3-ul w3-hoverable w3-white">
+          <li class="w3-padding-16" href="http://bit.ly/2rd1iNB">
+            <img src="http://bit.ly/2rd4CIt" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">这个姑娘拉了一票波士顿的运动女神，到底想干嘛？</span><br>
+            <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
+          </li>
+          <li class="w3-padding-16">
+            <img src="http://bit.ly/2r27xD6" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">元气少女的早餐长什么样？</span><br>
+            <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
+          </li>
+          <li class="w3-padding-16">
+            <img src="http://bit.ly/2raT0DO" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">波士顿慢跑+早午餐指南</span><br>
+            <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
+          </li>
+        </ul>
+      </div>
+      <hr> -->
+
+
+
+    <!-- Instagram窗口 -->
+    <!-- <div class="w3-card-2 w3-margin">
+      <div class="w3-container w3-padding">
+        <h4>活动回顾</h4>
+        </div>
+        <script src="//lightwidget.com/widgets/lightwidget.js">
+        </script><iframe src="//lightwidget.com/widgets/e8e6da2cfd455108835373104697f446.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+      </div> -->
+
+
+      <!-- 热门标签 -->
+      <!-- <div class="w3-card-2 w3-margin">
+        <div class="w3-container w3-padding">
+          <h4>热门标签</h4>
+        </div>
+        <div class="w3-container w3-white">
+        <p><span class="w3-tag w3-black w3-margin-bottom">户外慢跑</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">线下课程</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">线上体验</span>
+          <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">人气教练</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">线上课程</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">波士顿</span>
+        </p>
+        </div>
+      </div> -->
+
+    <!-- END Introduction Menu -->
+    <!-- </div>
+
+
+    <!-- END w3-content -->
+    <!-- </div>
     </div>
-  </div>
-  </div>
 
-  <!--testing end -->
+    </body>
+    </html>  -->
 
-
-
-<!-- 右侧栏 -->
-<div class="w3-col l4">
-  <!-- 教练介绍 -->
-  <div class="w3-card-2 w3-margin w3-margin-top">
-    <div class="side-img" style="background-image:url('http://i4.buimg.com/519918/3d0858ca34304214.png');"></div>
-    <div class="w3-container w3-white">
-      <br><h4><b>元气美女Jilian</b></h4>       <span class="w3-tag" style="background-color:red">人气教练</span></p><hr>
-      <p>这个95年的妹子还没毕业就已经考取美国最权威的ACE私教认证，拳击，瑜伽，跑步，芭蕾她样样都爱。</p>
-      <p><button class="w3-button w3-padding-large w3-white w3-border" href="https://mp.weixin.qq.com/s?src=3&timestamp=1495979765&ver=1&signature=3Cc6w46cc5qXVaM01hNcB7LbP*9c143no5ny83FTH4i6Vpp9mIjlID*OSmr*hKKitZTMumqzrs8Vqcc6igy99Rm0QRA3dZEsyeP0GNRhAjkFZPz9RWfUhYrrgwnDqRPtBdmzDu0NuN95Hud8bBKi5gr*dkmsF6czxkDveaJzsYg="><b>认识教练 »</b></button></p>
-    </div>
-  </div><hr>
-
-  <!-- 学员体验 -->
-  <div class="w3-card-2 w3-margin">
-    <div class="w3-container w3-padding">
-      <h4># 我是BosGal</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <li class="w3-padding-16" href="http://bit.ly/2rd1iNB">
-        <img src="http://bit.ly/2rd4CIt" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">这个姑娘拉了一票波士顿的运动女神，到底想干嘛？</span><br>
-        <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
-      </li>
-      <li class="w3-padding-16">
-        <img src="http://bit.ly/2r27xD6" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">元气少女的早餐长什么样？</span><br>
-        <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
-      </li>
-      <li class="w3-padding-16">
-        <img src="http://bit.ly/2raT0DO" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">波士顿慢跑+早午餐指南</span><br>
-        <p style="color:grey"><span>波士顿爱运动的妹子都在这！</span></p>
-      </li>
-    </ul>
-  </div>
-  <hr>
-
-
-
-<!-- Instagram窗口 -->
-<div class="w3-card-2 w3-margin">
-  <div class="w3-container w3-padding">
-    <h4>活动回顾</h4>
-    </div>
-    <script src="//lightwidget.com/widgets/lightwidget.js">
-    </script><iframe src="//lightwidget.com/widgets/e8e6da2cfd455108835373104697f446.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
-  </div>
-
-
-
-  <!-- 热门标签 -->
-  <div class="w3-card-2 w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>热门标签</h4>
-    </div>
-    <div class="w3-container w3-white">
-    <p><span class="w3-tag w3-black w3-margin-bottom">户外慢跑</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">线下课程</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">线上体验</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">人气教练</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">线上课程</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">波士顿</span>
-    </p>
-    </div>
-  </div>
-
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-<br>
-</div>
-
-<!-- END w3-content -->
-</div>
-
-
+<!-- fix bug end -->
 
 
 <!-- Grid -->
@@ -229,16 +310,3 @@ body,h1,h2,h3,h4,h5 {font-family: "Helvetica", "Microsoft Yahei", sans-serif}
       </li>
     </ul>
   </div>
-  <hr> -->
-
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-</div><br>
-
-<!-- END w3-content -->
-
-</body>
-</html>
-<% end %>

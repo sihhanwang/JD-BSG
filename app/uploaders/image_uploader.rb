@@ -10,7 +10,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   if Rails.env.production?
       storage :fog
   elsif Rails.env.development?
-      storage :file
+    # storage :file
   end
 
   # Override the directory where uploaded files will be stored.
@@ -19,14 +19,14 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  process resize_to_fit: [800, 800]
+  process resize_to_fit: [1020, 768] #圖片上傳後，自動切成你要的size
 
  version :thumb do
-   process resize_to_fill: [200,200]
+   process resize_to_fill: [800,640] #設同時切其他size的版本-thumb
  end
 
  version :medium do
-   process resize_to_fill: [400,400]
+   process resize_to_fill: [400,400] #設同時切其他size的版本-medium
  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
