@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <body id="myPage">
   <head>
+
     <style>
     #bgimg {
       background-image:url("https://images.lululemon.com/is/image/lululemon/gbl_may23_traintimes_Hero_Homepage_whatsnew?$gsr_homehero_2x1_lg$");
@@ -239,3 +240,17 @@
 
   </body>
 </html>
+
+<script>
+  $(document).ready(function(){
+     $(".navbar-fixed-top").css("background-color", "rgba(0,0,0,0.3)");
+     $(".navbar-fixed-top").css("border-color", "rgba(0,0,0,0.3)");
+  $(window).scroll(function() {
+     if ($(document).scrollTop() > 50) {
+       $(".navbar-fixed-top").css("background-color", "#212121");
+     } else {
+       $(".navbar-fixed-top").css("background-color", "rgba(0,0,0,0.3)");
+     }
+   });
+  });
+</script>
