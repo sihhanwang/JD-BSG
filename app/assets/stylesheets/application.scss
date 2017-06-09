@@ -5,6 +5,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');   //引入google思源黑简在线字体
+
+body {
+     font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
+     color: #666;                                        // 修改全站的字体主色 压低亮度
+     }
 
 
 /* login css */
@@ -20,6 +26,18 @@
     margin-bottom: 100px;
     border-radius: 0;
     height: 60px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #e2e0e0;
+}
+
+.btn-default {
+  color: #e2e0e0;
+  background-color:
+  rgba(255, 255, 255, 0);
+  border-color:
+  rgba(255, 255, 255, 0);
 }
 
 .user_setup_content{
