@@ -61,12 +61,10 @@ body, html {height: 100%}
     <img src="http://i1.piimg.com/519918/13309dbd2096ba35.png" alt="BosGalRun" style="width:25%">
     <p style="font-size: 32px;">- BosGalRun -</p>
     <p style="font-size: 32px;">元气少女慢跑社区</p>
-    <br>
-    <br>
-    <p class="text-center" style="font-size: 20px; color: lightgrey;">
-    <%= link_to("周末元气跑", products_path, :method => :get, :class => "btn btn-md") %>/
-    <%= link_to("马甲线女神计划", products_path, :method => :get, :class => "btn btn-md") %>/
-    <%= link_to("Styling Show", products_path, :method => :get, :class => "btn btn-md") %>
+    <p class="text-center" style="font-size: 28px; color: white;">
+    <%= link_to("周末元气跑", products_path, :method => :get, :class => "btn btn-lg") %> |
+    <%= link_to("马甲线女神计划", products_path, :method => :get, :class => "btn btn-lg") %> |
+    <%= link_to("Styling Show", products_path, :method => :get, :class => "btn btn-lg") %>
 
   </p>
   </div>
@@ -87,3 +85,16 @@ body, html {height: 100%}
 
 </head>
 </html>
+<script>
+  $(document).ready(function(){
+     $(".navbar-fixed-top").css("background-color", "rgba(0,0,0,0.3)");
+     $(".navbar-fixed-top").css("border-color", "rgba(0,0,0,0.3)");
+  $(window).scroll(function() {
+     if ($(document).scrollTop() > 50) {
+       $(".navbar-fixed-top").css("background-color", "#212121");
+     } else {
+       $(".navbar-fixed-top").css("background-color", "rgba(0,0,0,0.3)");
+     }
+   });
+  });
+</script>

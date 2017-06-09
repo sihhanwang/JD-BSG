@@ -5,6 +5,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');   //引入google思源黑简在线字体
+
+body {
+     font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
+     color: #666;                                        // 修改全站的字体主色 压低亮度
+     }
 
 
 /* login css */
@@ -14,18 +20,34 @@
     background: image_url("user_background.jpg") no-repeat scroll top center/ cover;
 }
 
+.navbar-default {
+    background-color: #222222;
+    border-color: rgba(0,0,0,0.3);
+    margin-bottom: 100px;
+    border-radius: 0;
+    height: 60px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #e2e0e0;
+}
+
+.btn-default {
+  color: #e2e0e0;
+  background-color:
+  rgba(255, 255, 255, 0);
+  border-color:
+  rgba(255, 255, 255, 0);
+}
+
 .user_setup_content{
     background: #fff;
-
     margin-top: 55px;
     padding-top: 20px;
     padding-bottom: 20px;
     box-shadow: 1px 3px 5px #333;
-
     border: 5px solid #666;
-
     border-radius: 25px;
-
     opacity:0.95;
     filter:alpha(opacity=95);
   }
@@ -262,10 +284,11 @@
   }
 
   .title-img {
-      margin-top: -30px;
+      margin-top: 50px;
       margin-bottom: 50px;
+      margin-left: -20px;
       float: left;
-      width:  100%;
+      width:  110%;
       height: 300px;
       background-position: 15% 15%;
       background-repeat:   no-repeat;
